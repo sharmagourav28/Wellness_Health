@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Health View</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo-2.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    @media (min-width: 1400px) {
+      .header_section {
+        max-width: 1490px;
+      }
+    }
+
+    .scan {
+      margin: 10px 0px;
+      color: white;
+      font-size: 35px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .doc {
+      color: white;
+      font-size: 25px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .qrmedia {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 30%;
+      z-index: 1000;
+    }
+
+    .doc h1 {
+      color: white;
+      font-size: 25px;
+    }
+
+    .scan h1 {
+      color: white;
+      font-size: 25px;
+    }
+
+    @media screen and (max-width:768px) {
+      .unsold {
+        width: 380px;
+      }
+
+      .product-image {
+        height: 200px;
+      }
+
+      /* .unsold-product {
+        height: 550px;
+      } */
+
+      .img-responsive {
+        margin-left: 12px;
+      }
+
+      .buynow {
+        /* margin-top: 100px; */
+        margin-bottom: 15px;
+      }
+
+      .qrmedia {
+        top: 30;
+        left: 10;
+      }
+
+      .scan {
+        font-size: 20px;
+        margin-top: 0;
+        margin-top: 10px;
+        margin-left: -30px;
+
+        /* text-align: justify;
+        justify-content: center; */
+      }
+
+      .scan h1 {
+        font-size: 30px;
+        color: white;
+      }
+
+      .doc h1 {
+        color: white;
+        font-size: 15px;
+      }
+
+
+
+    }
+
+
+
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #444444;
+    }
+
+    a,
+    a:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .section-products {
+      padding: 80px 0 54px;
+    }
+
+    .section-products .header {
+      margin-bottom: 50px;
+    }
+
+    .section-products .header h3 {
+      font-size: 1rem;
+      color: #fe302f;
+      font-weight: 500;
+    }
+
+    .section-products .header h2 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #444444;
+    }
+
+    .section-products .single-product {
+      margin-bottom: 26px;
+    }
+
+    .section-products .single-product .part-1 {
+      position: relative;
+      height: 290px;
+      max-height: 290px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .section-products .single-product .part-1::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: all 0.3s;
+    }
+
+
+
+    .section-products #product-1 .part-1::before {
+      background: url("./assets/img/Product/p-1-final.png") no-repeat center;
+      background-size: cover;
+      transition: all 0.3s;
+    }
+
+    .section-products #product-2 .part-1::before {
+      background: url("./assets/img/Product/p-2-final.png") no-repeat center;
+      background-size: cover;
+    }
+
+    .section-products #product-3 .part-1::before {
+      background: url("./assets/img/Product/p-3-final.png") no-repeat center;
+      background-size: cover;
+    }
+
+    .section-products #product-4 .part-1::before {
+      background: url("./assets/img/Product/p-4-final.png") no-repeat center;
+      background-size: cover;
+    }
+
+    .section-products #product-5 .part-1::before {
+      background: url("./assets/img/Product/p-5-final.png") no-repeat center;
+      background-size: cover;
+    }
+
+    .section-products #product-6 .part-1::before {
+      background: url("./assets/img/Product/p-6-final.png") no-repeat center;
+      background-size: cover;
+    }
+
+    .section-products #product-7 .part-1::before {
+      background: url("./assets/img/Product/p-7-final.png") no-repeat center;
+      background-size: cover;
+    }
+
+    .section-products #product-8 .part-1::before {
+      background: url("./assets/img/Product/p-8-final.png") no-repeat center;
+      background-size: cover;
+    }
+
+    .section-products #product-9 .part-1::before {
+      background: url("./assets/img/Product/p-9-final.png") no-repeat center;
+      background-size: cover;
+    }
+
+    .section-products .single-product .part-1 .discount,
+    .section-products .single-product .part-1 .new {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      color: #ffffff;
+      background-color: #fe302f;
+      padding: 2px 8px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .section-products .single-product .part-1 .new {
+      left: 0;
+      background-color: #444444;
+    }
+
+    .section-products .single-product .part-1 ul {
+      position: absolute;
+      bottom: -41px;
+      left: 20px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      opacity: 0;
+      transition: bottom 0.5s, opacity 0.5s;
+    }
+
+    .section-products .single-product:hover .part-1 ul {
+      bottom: 30px;
+      opacity: 1;
+    }
+
+    .section-products .single-product .part-1 ul li {
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    .section-products .single-product .part-1 ul li a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #ffffff;
+      color: #444444;
+      text-align: center;
+      box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
+      transition: color 0.2s;
+    }
+
+    .section-products .single-product .part-1 ul li a:hover {
+      color: #fe302f;
+    }
+
+    .section-products .single-product .part-2 .product-title {
+      font-size: 1rem;
+    }
+
+    .section-products .single-product .part-2 h4 {
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    .section-products .single-product .part-2 .product-old-price {
+      position: relative;
+      padding: 0 7px;
+      margin-right: 2px;
+      opacity: 0.6;
+    }
+
+    .section-products .single-product .part-2 .product-old-price::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #444444;
+      transform: translateY(-50%);
+    }
+
+    .buy-button {
+      margin-left: 100px;
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #38bc75;
+      color: white;
+      font-size: 17px;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .buy-button:hover {
+      background-color: #0c740a;
+      color: white;
+    }
+
+
+    /* new product img */
+    .product-content {
+      border: 2px solid #dfe5e9;
+      margin-bottom: 20px;
+      margin-top: 12px;
+      background: #fff;
+      padding: 4px;
+      -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .product-content .carousel-control.left {
+      margin-left: 0
+    }
+
+    .product-content .product-image {
+      background-color: #fff;
+      display: block;
+      min-height: 238px;
+      overflow: hidden;
+      position: relative
+    }
+
+    .product-content .product-deatil {
+      border-bottom: 1px solid #dfe5e9;
+      padding-bottom: 17px;
+      padding-left: 16px;
+      padding-top: 16px;
+      position: relative;
+      background: #fff
+    }
+
+    .product-content .product-deatil h5 a {
+      color: #2f383d;
+      font-size: 15px;
+      line-height: 19px;
+      text-decoration: none;
+      padding-left: 0;
+      margin-left: 0
+    }
+
+    .product-content .product-deatil h5 a span {
+      color: #9aa7af;
+      display: block;
+      font-size: 13px
+    }
+
+    .product-content .product-deatil span.tag1 {
+      border-radius: 50%;
+      color: #fff;
+      font-size: 15px;
+      height: 50px;
+      padding: 13px 0;
+      position: absolute;
+      right: 10px;
+      text-align: center;
+      top: 10px;
+      width: 50px
+    }
+
+    .product-content .product-deatil span.sale {
+      background-color: #21c2f8
+    }
+
+    .product-content .product-deatil span.discount {
+      background-color: #71e134
+    }
+
+    .product-content .product-deatil span.hot {
+      background-color: #fa9442
+    }
+
+    .product-content .description {
+      font-size: 12.5px;
+      line-height: 20px;
+      padding: 10px 14px 16px 19px;
+      background: #fff
+    }
+
+    .product-content .product-info {
+      padding: 11px 19px 10px 20px
+    }
+
+    .product-content .product-info a.add-to-cart {
+      color: #2f383d;
+      font-size: 13px;
+      padding-left: 16px
+    }
+
+    .product-content name.a {
+      padding: 5px 10px;
+      margin-left: 16px
+    }
+
+    .product-info.smart-form .btn {
+      padding: 6px 12px;
+      margin-left: 12px;
+      margin-top: -10px
+    }
+
+    .product-entry .product-deatil {
+      border-bottom: 1px solid #dfe5e9;
+      padding-bottom: 17px;
+      padding-left: 16px;
+      padding-top: 16px;
+      position: relative
+    }
+
+    .product-entry .product-deatil h5 a {
+      color: #2f383d;
+      font-size: 15px;
+      line-height: 19px;
+      text-decoration: none
+    }
+
+    .product-entry .product-deatil h5 a span {
+      color: #9aa7af;
+      display: block;
+      font-size: 13px
+    }
+
+    .load-more-btn {
+      background-color: #21c2f8;
+      border-bottom: 2px solid #037ca5;
+      border-radius: 2px;
+      border-top: 2px solid #0cf;
+      margin-top: 20px;
+      padding: 9px 0;
+      width: 100%
+    }
+
+    .product-block .product-deatil p.price-container span,
+    .product-content .product-deatil p.price-container span,
+    .product-entry .product-deatil p.price-container span,
+    .shipping table tbody tr td p.price-container span,
+    .shopping-items table tbody tr td p.price-container span {
+      color: #f80707;
+      font-family: Lato, sans-serif;
+      font-size: 21px;
+      line-height: 20px
+    }
+
+    .product-info.smart-form .rating label {
+      margin-top: 0
+    }
+
+    .product-wrap .product-image span.tag2 {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      padding: 10px 0;
+      color: #fff;
+      font-size: 11px;
+      text-align: center
+    }
+
+    .product-wrap .product-image span.sale {
+      background-color: #57889c
+    }
+
+    .product-wrap .product-image span.hot {
+      background-color: #a90329
+    }
+
+    .shop-btn {
+      position: relative
+    }
+
+    .shop-btn>span {
+      background: #a90329;
+      display: inline-block;
+      font-size: 10px;
+      box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+      font-weight: 700;
+      border-radius: 50%;
+      padding: 2px 4px 3px !important;
+      text-align: center;
+      line-height: normal;
+      width: 19px;
+      top: -7px;
+      left: -7px
+    }
+
+    .description-tabs {
+      padding: 30px 0 5px !important
+    }
+
+    .description-tabs .tab-content {
+      padding: 10px 0
+    }
+
+    .product-deatil {
+      padding: 30px 30px 50px
+    }
+
+    .product-deatil hr+.description-tabs {
+      padding: 0 0 5px !important
+    }
+
+    .product-deatil .carousel-control.left,
+    .product-deatil .carousel-control.right {
+      background: none !important
+    }
+
+    .product-deatil .glyphicon {
+      color: #3276b1
+    }
+
+    .product-deatil .product-image {
+      border-right: 0px solid #fff !important
+    }
+
+    .product-deatil .name {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    .product-deatil .name small {
+      display: block
+    }
+
+    .product-deatil .name a {
+      margin-left: 0
+    }
+
+    .product-deatil .price-container {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 300
+    }
+
+    .product-deatil .price-container small {
+      font-size: 12px
+    }
+
+    .product-deatil .fa-2x {
+      font-size: 16px !important
+    }
+
+    .product-deatil .fa-2x>h5 {
+      font-size: 12px;
+      margin: 0
+    }
+
+    .product-deatil .fa-2x+a,
+    .product-deatil .fa-2x+a+a {
+      font-size: 13px
+    }
+
+    .product-deatil .certified {
+      margin-top: 10px
+    }
+
+    .product-deatil .certified ul {
+      padding-left: 0
+    }
+
+    .product-deatil .certified ul li:not(first-child) {
+      margin-left: -3px
+    }
+
+    .product-deatil .certified ul li {
+      display: inline-block;
+      background-color: #f9f9f9;
+      padding: 13px 19px
+    }
+
+    .product-deatil .certified ul li:first-child {
+      border-right: none
+    }
+
+    .product-deatil .certified ul li a {
+      text-align: left;
+      font-size: 12px;
+      color: #6d7a83;
+      line-height: 16px;
+      text-decoration: none
+    }
+
+    .product-deatil .certified ul li a span {
+      display: block;
+      color: #21c2f8;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center
+    }
+
+    .product-deatil .message-text {
+      width: calc(100% - 70px)
+    }
+
+    @media only screen and (min-width:1024px) {
+      .product-content div[class*=col-md-4] {
+        padding-right: 0
+      }
+
+      .product-content div[class*=col-md-8] {
+        padding: 0 13px 0 0
+      }
+
+      .product-wrap div[class*=col-md-5] {
+        padding-right: 0
+      }
+
+      .product-wrap div[class*=col-md-7] {
+        padding: 0 13px 0 0
+      }
+
+      .product-content .product-image {
+        border-right: 1px solid #dfe5e9
+      }
+
+      .product-content .product-info {
+        position: relative
+      }
+    }
+
+    .img-responsive {
+      height: 300px;
+      width: 258px;
+    }
+
+    .product-des {
+      text-align: justify;
+      justify-content: center;
+    }
+
+    .pro-name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      display: none;
+      z-index: 999;
+    }
+
+    /* Disable scrolling when overlay is active */
+    body.no-scroll {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body class="projects-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div
+      class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between header_section">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo-2.png" alt="">
+        <h1 class="sitename">Health View</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="results.html">Results</a></li>
+          <li><a href="projects.html" class="active">Product</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" style="background-image: url(assets/img/banner-6.jpg);">
+      <div class="container position-relative">
+        <h1>Products</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html" style="color: #70f4cc;">Home</a></li>
+            <li class="current">Products</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up" style="padding: 40px;">
+      <h2 style="color: #0bc48d">Our Best Selling Products</h2>
+    </div><!-- End Section Title -->
+
+  </main>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container" style="display: flex; flex-wrap: wrap; margin-bottom: 100px;">
+    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+      <!-- product -->
+      <div class="product-content product-wrap clearfix" style="width: 90%;">
+        <div class="row">
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="product-image">
+              <img src="./assets/img/Product/p-3-final.png" alt="194x228" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="product-deatil pro-name">
+              <h5 class="name">
+                <a href="#" style="font-size: 20px;">
+                  Triphala ras
+                </a>
+              </h5>
+              <p class="price-container">
+                <span>Rs.320</span>
+              </p>
+              <span class="tag1"></span>
+            </div>
+            <div class="description">
+              <p class="product-des">Triphala Ras is a traditional Ayurvedic herbal remedy that consists of a
+                combination of three fruits:
+                Amalaki, Bibhitaki, and Haritaki. These fruits are used in Ayurveda to promote
+                overall health and well-being.</p>
+            </div>
+            <div class="product-info smart-form">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <a class="btn btn-success handle-buy-now buynow">Buy Now</a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="rating">
+                    <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                    <label for="stars-rating-4"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-3"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-2"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-1"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end product -->
+    </div>
+
+
+    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+      <!-- product -->
+      <div class="product-content product-wrap clearfix" style="width: 90%;">
+        <div class="row">
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="product-image">
+              <img src="./assets/img/Product/p-5-final.png" alt="194x228" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="product-deatil pro-name">
+              <h5 class="name">
+                <a href="#" style="font-size: 20px;">
+                  Panch Tulsi Ras
+                </a>
+              </h5>
+              <p class="price-container">
+                <span>Rs.320</span>
+              </p>
+              <span class="tag1"></span>
+            </div>
+            <div class="description">
+              <p class="product-des">Panch Tulsi Ras is an Ayurvedic herbal remedy made from a blend of five types of
+                Tulsi plants. Tulsi is highly revered in Ayurveda for its medicinal properties and has been
+                used for centuries to promote health and well-being.
+
+                .</p>
+            </div>
+            <div class="product-info smart-form">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <a class="btn btn-success handle-buy-now buynow">Buy Now</a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="rating">
+                    <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                    <label for="stars-rating-4"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-3"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-2"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-1"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end product -->
+    </div>
+
+
+
+
+    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+      <!-- product -->
+      <div class="product-content product-wrap clearfix" style="width: 90%;">
+        <div class="row">
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="product-image">
+              <img src="./assets/img/Product/p-9-final.png" alt="194x228" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="product-deatil pro-name">
+              <h5 class="name">
+                <a href="#" style="font-size: 20px;">
+                  Anwala Juice
+                </a>
+              </h5>
+              <p class="price-container">
+                <span>Rs.320</span>
+              </p>
+              <span class="tag1"></span>
+            </div>
+            <div class="description">
+              <p class="product-des">Anwala Juice, also known as Amla Juice, is derived from the Indian gooseberry
+                (Phyllanthus emblica). This fruit is highly regarded in Ayurveda for its numerous health benefits due to
+                its rich nutrient profile, particularly its high vitamin C content.</p>
+            </div>
+            <div class="product-info smart-form">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <a class="btn btn-success handle-buy-now buynow">Buy Now</a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="rating">
+                    <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                    <label for="stars-rating-4"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-3"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-2"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-1"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end product -->
+    </div>
+
+
+
+    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+      <!-- product -->
+      <div class="product-content product-wrap clearfix" style="width: 90%;">
+        <div class="row">
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="product-image">
+              <img src="./assets/img/Product/p-6-final.png" alt="194x228" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="product-deatil pro-name">
+              <h5 class="name">
+                <a href="#" style="font-size: 20px;">
+                  laape Skin Tonic
+                </a>
+              </h5>
+              <p class="price-container">
+                <span>Rs.299</span>
+              </p>
+              <span class="tag1"></span>
+            </div>
+            <div class="description">
+              <p class="product-des">Amrit Laape Skin Tonic is an Ayurvedic herbal formulation designed to improve skin
+                health and address various skin concerns. While specific details about Amrit Laape Skin Tonic may vary
+                depending on the manufacturer.</p>
+            </div>
+            <div class="product-info smart-form">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <a class="btn btn-success handle-buy-now buynow">Buy Now</a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="rating">
+                    <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                    <label for="stars-rating-4"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-3"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-2"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-1"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end product -->
+    </div>
+  </div>
+
+  <!-- /*
+  <div class="container section-title" data-aos="fade-up" style="padding: 40px;">
+    <h2 style="color: #0bc48d">Our Other Products</h2>
+  </div>End Section Title -->
+
+  <!--  unsold product -->
+
+  <!-- <div class="container unsold" style="display: flex; flex-wrap: wrap; margin-bottom: 100px;">
+    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+       product
+      <div class="product-content product-wrap clearfix unsold-product" style="width: 90%;">
+        <div class="row">
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="product-image">
+              <img src="./assets/img/Product/p-2-final.png" alt="194x228" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="product-deatil pro-name">
+              <h5 class="name">
+                <a href="#" style="font-size: 20px;">
+                  Lush Hair Shampoo
+                </a>
+              </h5>
+              <p class="price-container">
+                <span>Rs.99</span>
+              </p>
+              <span class="tag1"></span>
+            </div>
+            <div class="description">
+              <p class="product-des">Lush Hair Shampoo refers to shampoos produced by Lush, a company known for its
+                handmade, eco-friendly, and ethically sourced cosmetic products. Lush offers a variety of shampoos
+                designed to address different hair types and concerns</p>
+            </div>
+            <div class="product-info smart-form">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  
+                  <span>Health View</span>
+
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="rating">
+                    <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                    <label for="stars-rating-4"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-3"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-2"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-1"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+    </div>
+
+
+    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+       product 
+      <div class="product-content product-wrap clearfix" style="width: 90%;">
+        <div class="row">
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="product-image">
+              <img src="./assets/img/Product/p-4-final.png" alt="194x228" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="product-deatil pro-name">
+              <h5 class="name">
+                <a href="#" style="font-size: 20px;">
+                  Neem Juice 500ml
+                </a>
+              </h5>
+              <p class="price-container">
+                <span>Rs.240</span>
+              </p>
+              <span class="tag1"></span>
+            </div>
+            <div class="description">
+              <p class="product-des">Neem juice, derived from the leaves of the neem tree (Azadirachta indica), is a
+                traditional Ayurvedic remedy known for its wide range of health benefits. Neem has been used for
+                centuries in Ayurvedic medicine for its potent antimicrobial, anti-inflammatory, and detoxifying
+                properties.
+
+                .</p>
+            </div>
+            <div class="product-info smart-form">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <span>Health View</span>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="rating">
+                    <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                    <label for="stars-rating-4"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-3"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-2"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-1"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       end product
+    </div>
+
+
+
+
+    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+       product 
+      <div class="product-content product-wrap clearfix" style="width: 90%;">
+        <div class="row">
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="product-image">
+              <img src="./assets/img/Product/p-6-final.png" alt="194x228" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="product-deatil pro-name">
+              <h5 class="name">
+                <a href="#" style="font-size: 20px;">
+                  Amrit laape Skin
+                </a>
+              </h5>
+              <p class="price-container">
+                <span>Rs.299</span>
+              </p>
+              <span class="tag1"></span>
+            </div>
+            <div class="description">
+              <p class="product-des">Amrit Laape Skin Tonic is an Ayurvedic herbal formulation designed to improve skin
+                health and address various skin concerns. While specific details about Amrit Laape Skin Tonic may vary
+                depending on the manufacturer, it generally contains a blend of natural ingredients known for their
+                skin-benefiting properties.</p>
+            </div>
+            <div class="product-info smart-form">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <span>Health View</span>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="rating">
+                    <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                    <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                    <label for="stars-rating-3"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-2"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-1"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      end product 
+    </div>
+
+
+
+    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+       product 
+      <div class="product-content product-wrap clearfix" style="width: 90%;">
+        <div class="row">
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="product-image">
+              <img src="./assets/img/Product/p-7-final.png" alt="194x228" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="product-deatil pro-name">
+              <h5 class="name">
+                <a href="#" style="font-size: 20px;">
+                  Organic Raw Honey
+                </a>
+              </h5>
+              <p class="price-container">
+                <span>Rs.75</span>
+              </p>
+              <span class="tag1"></span>
+            </div>
+            <div class="description">
+              <p class="product-des">Organic raw honey is a natural sweetener made by bees from the nectar of flowers.
+                Unlike processed honey, raw honey is not heated or pasteurized, which helps preserve its natural
+                enzymes, vitamins, minerals, and antioxidants. When labeled as "organic," it means the honey is produced
+                from bees that forage on organically grown plants.</p>
+            </div>
+            <div class="product-info smart-form">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <span>Health View</span>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="rating">
+                    <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                    <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                    <label for="stars-rating-3"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-2"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                    <label for="stars-rating-1"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      end product
+    </div>
+  </div>
+  -->
+
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Health View</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>A, PARK REGENCY APARTMENT,<br> 71, Mig Colony, Ambedkar Nagar</p>
+            <p>Indore 452010</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+91 78987 11022</span></p>
+            <p><strong>Email:</strong> <span>info@healthview.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://wa.me/917898711022"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.facebook.com/healthviewbysheetalsharma/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/sheetal_shrama_healing/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@healinghandswithsheetalsha8701"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Product</a></li>
+            <li><a href="results.html">Result</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html">Energy therapies</a></li>
+            <li><a href="services.html">Accupressure</a></li>
+            <li><a href="services.html">Meditation</a></li>
+            <li><a href="services.html">Self Hypnosis</a></li>
+            <li><a href="services.html">Aroma Therapy</a></li>
+            <li><a href="services.html">Self Healing</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Treatments</h4>
+          <ul>
+            <li><a href="results.html">Vitligo Care</a></li>
+            <li><a href="results.html">Dibeties Care</a></li>
+            <li><a href="results.html">Skin Treatment</li>
+            <li style="margin-top: -10px; padding-top: 0px;"><a href="results.html">Stress Management</a></li>
+            <li><a href="results.html">obesity Management</a></li>
+            <li><a href="results.html">Chakras Healing</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Products</h4>
+          <ul>
+            <li><a href="projects.html">Triphala Ras</a></li>
+            <li><a href="projects.html">Panch Tulsi Ras</a></li>
+            <li><a href="projects.html">Anwala Juice</a></li>
+            <li><a href="projects.html">laape Skin Tonic</a></li>
+          </ul>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Health View</strong> <span>All Rights Reserved</span>
+      </p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://qualitywebs.online/" class="quality-link">QualityWebs</a>
+      </div>
+    </div>
+
+  </footer>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <section class="calling-button">
+    <a class="cc-call-to-action-ripple" href="tel:7898711022">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </section>
+  <section class="whatsapp-button">
+    <a class="cc-whatsapp-to-action-ripple" href="https://wa.me/7898711022">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </section>
+
+  <section class="call-buton"><i
+      style="margin-left: -4px; font-size: 20px; text-align: justify; justify-content: center;"
+      class="fa-solid fa-comment-dots  cc-calto-action-ripple" onclick="toggleIcons()"></i>
+  </section>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+
+  <div id="overlay" style="display: none;"></div>
+  <div style="display: none;" id="display-qr-code">
+
+    <div class="qrmedia" style="width: 100%;">
+      <div style="display: flex;align-items: center; flex-direction: column; width: 100%;">
+        <div style="display: flex;">
+          <img class="imgqr" src=" ./assets/img/payment-qr-code.jpg" style="height: 35vh;">
+
+          <div>
+
+          </div>
+          <button id="close-button"
+            style="height: max-content; border-radius: 20%; font-size: 25px; margin: 0px; padding: 0px; width: max-content; border: white; background-color: white; margin-top: -60px;">❎</button>
+
+        </div>
+        <div class="scan">
+          <h1>Scan and Pay</h1>
+        </div>
+        <div class="doc">
+          <h1>Share Payment Details on Phone: +91 7898711022 </h1>
+
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    const closeButton = document.getElementById("close-button");
+    const qrCode = document.getElementById("display-qr-code");
+    const overlay = document.getElementById("overlay");
+    const buyNowButtons = document.querySelectorAll(".handle-buy-now");
+
+    buyNowButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        overlay.style.display = "block";
+        qrCode.style.display = "block";
+        document.body.classList.add("no-scroll");
+      });
+    });
+
+    closeButton.addEventListener("click", () => {
+      overlay.style.display = "none";
+      qrCode.style.display = "none";
+      document.body.classList.remove("no-scroll");
+    });
+
+
+  </script>
+
+</body>
+
+</html>
