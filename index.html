@@ -53,6 +53,7 @@
     @media (max-width: 768px) {
       .background-container {
         background-image: url('./assets/img/banner/mobile.jpg');
+
         /* Adjust mobile-specific styles */
       }
     }
@@ -89,12 +90,11 @@
 
     @media (max-width: 1180px) {
       .background-container {
-        background-image: url('./assets/img/banner/bn12.jpg');
+        /* background-image: url('./assets/img/banner/bn12.jpg'); */
         height: 100vh;
-        background-size: contain;
-        background-position: center;
+        background-size: cover;
         background-repeat: no-repeat;
-        /* Adjust mobile-specific styles */
+
       }
     }
 
@@ -114,8 +114,10 @@
 
     @media (max-width: 768px) {
       .background-container {
+        /*  mobile */
         background-image: url('./assets/img/banner/bn12.jpg');
         background-size: contain;
+        height: 100vh;
         /* Adjust mobile-specific styles  of mobile*/
       }
     }
