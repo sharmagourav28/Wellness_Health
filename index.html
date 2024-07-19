@@ -46,21 +46,17 @@
       background-size: cover;
       background-position: center;
       height: 100vh;
-      /* Adjust height as needed */
     }
 
-    /* Media query for mobile screens */
+
     @media (max-width: 768px) {
       .background-container {
         background-image: url('./assets/img/banner/mobile.jpg');
-
-        /* Adjust mobile-specific styles */
       }
     }
 
     .mobile-only {
       display: none;
-      /* Hide the div by default */
     }
 
     /* Media query for mobile screens */
@@ -117,8 +113,25 @@
         /*  mobile */
         background-image: url('./assets/img/banner/bn12.jpg');
         background-size: contain;
-        height: 100vh;
-        /* Adjust mobile-specific styles  of mobile*/
+        height: 100%;
+        width: 80vh;
+        margin-left: -120px;
+
+      }
+
+      .hero {
+        min-height: 300px;
+      }
+
+    }
+
+    @media (max-width : 1024) {
+      .background-container {
+        background-image: url('./assets/img/banner/bn12.jpg');
+        background-size: contain;
+        height: 100%;
+        width: 80vh;
+        margin-left: -120px;
       }
     }
 
@@ -135,8 +148,6 @@
 
     .logo-fot {
       margin-left: 15px;
-
-      /* padding-left: 20px; */
     }
   </style>
 </head>
@@ -174,7 +185,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section class_section " style="z-index: 100;">
 
-      <div class="info d-flex align-items-center mobile-only">
+      <div class="info d-flex align-items-center mobile-only ">
         <div class="container">
           <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-6 text-center mobile-only ipad-only">

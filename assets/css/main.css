@@ -2813,6 +2813,7 @@ h6 {
 }
 
 @media (max-width: 1024px) {
+  /* not more i pad */
   .banner-text {
     top: 90%; /* Adjust top position for smaller screens */
     left: 51%; /* Adjust left position for smaller screens */
@@ -2835,6 +2836,7 @@ h6 {
 }
 
 @media (max-width: 768px) {
+  /* not for ipad */
   .banner-text {
     top: 60%; /* Adjust top position for smaller screens */
     left: 60%; /* Adjust left position for smaller screens */
@@ -2854,6 +2856,6 @@ h6 {
   }
 
   .banner-text h1 {
-    font-size: 1.9rem; /* Adjust font size for smaller screens */
+    font-size: 1.3rem; /* Adjust font size for smaller screens */
   }
 }
