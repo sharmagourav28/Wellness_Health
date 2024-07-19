@@ -2848,7 +2848,7 @@ h6 {
 
 @media (max-width: 576px) {
   .banner-text {
-    top: 50%; /* Adjust top position for smaller screens */
+    top: 80%; /* Adjust top position for smaller screens */
     left: 50%; /* Adjust left position for smaller screens */
     width: 90%; /* Adjust width for smaller screens */
   }
