@@ -2836,11 +2836,11 @@ h6 {
 }
 
 @media (max-width: 768px) {
-  /* not for ipad */
+  /* not for ipad mini */
   .banner-text {
-    top: 60%; /* Adjust top position for smaller screens */
-    left: 60%; /* Adjust left position for smaller screens */
-    text-align: center; /* Center align text on smaller screens */
+    /* top: 60%;  */
+    left: 50%;
+    text-align: center;
   }
 
   .banner-text h1 {
